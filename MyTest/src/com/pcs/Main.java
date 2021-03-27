@@ -5,8 +5,11 @@ import org.junit.Test;
 public class Main {
 
     public static void main(String[] args) {
-        Main main = new Main();
-        main.testCalcu();//海鼎面试算法编程题
+//        Main main = new Main();
+//        main.testCalcu();//海鼎面试算法编程题
+
+        ThreadService threadService = new ThreadService();
+        threadService.ThreadTest12();
     }
 
     /***
@@ -30,6 +33,39 @@ public class Main {
             String[] arr3 = new String[]{"2", "4", "1", "13", "5", "/", "+", "*","-"};
             int result3 = service.calcu(arr3);
             System.out.println("result3:" + result3);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    ////实现两线程交替打印 1212
+    @Test
+    public void testThread(){
+        try {
+            ThreadService threadService = new ThreadService();
+            threadService.ThreadTest();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    //实现两线程交替打印 abab
+    @Test
+    public void testThreadCD(){
+        try {
+            ThreadService threadService = new ThreadService();
+            threadService.ThreadTestCD();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    //实现两线程交替打印 100以内 奇偶数交替打印
+    @Test
+    public void testThread12(){
+        try {
+            ThreadService threadService = new ThreadService();
+            threadService.ThreadTest12();
         }catch (Exception e){
             e.printStackTrace();
         }
