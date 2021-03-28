@@ -2,6 +2,8 @@ package com.pcs;
 
 import org.junit.Test;
 
+import java.util.List;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -69,5 +71,16 @@ public class Main {
         }catch (Exception e){
             e.printStackTrace();
         }
+    }
+
+    @Test
+    public void testCalcu1(){
+        CalcuService calcuService = new CalcuService();
+        List<Integer> integers = calcuService.calcuTest1(15);
+        System.out.print("[");
+        for (Integer i : integers){
+            System.out.print(i+",");
+        }
+        System.out.print("]");
     }
 }
